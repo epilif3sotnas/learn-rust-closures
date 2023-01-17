@@ -17,6 +17,17 @@ fn logging () {
     error!("ERROR");
 }
 
+fn return_closure_logging () -> impl Fn() {
+    move || {
+        trace!("TRACE");
+        debug!("DEBUG");
+        info!("INFO");
+        warn!("WARN");
+        error!("ERROR");
+    }
+}
+
+
 fn main () {
     env_logger::init();
     
@@ -55,4 +66,7 @@ fn main () {
 
     logging_levels(levels);
     logging_levels(logging);
+    
+    let closure_logging = return_closure_logging();
+    logging_levels(closure_logging);
 }
