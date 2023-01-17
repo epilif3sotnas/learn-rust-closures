@@ -1,7 +1,7 @@
 // internal
 mod lambda;
 
-use lambda::lambda::{operation, something};
+use lambda::lambda::{operation, something, logging_levels};
 
 // external
 #[macro_use]
@@ -35,4 +35,27 @@ fn main () {
         println!("Result: {}", a);
     };
     something(calling_no_params);
+
+   
+    let levels = || {
+        trace!("TRACE");
+        debug!("DEBUG");
+        info!("INFO");
+        warn!("WARN");
+        error!("ERROR");
+    };
+
+    logging_levels(levels);
+    logging_levels(logging);
+
+    
+
+}
+
+fn logging () {
+    trace!("TRACE");
+    debug!("DEBUG");
+    info!("INFO");
+    warn!("WARN");
+    error!("ERROR");
 }
