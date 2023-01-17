@@ -1,7 +1,7 @@
 // internal
 mod lambda;
 
-use lambda::lambda::operation;
+use lambda::lambda::{operation, something};
 
 // external
 #[macro_use]
@@ -29,4 +29,10 @@ fn main () {
 
     let print_log = || debug!("This is a log with level DEBUG");
     print_log();
+
+    let calling_no_params = || {
+        let a = 10 * 10;
+        println!("Result: {}", a);
+    };
+    something(calling_no_params);
 }
