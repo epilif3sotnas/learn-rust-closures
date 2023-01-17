@@ -9,6 +9,14 @@ extern crate log;
 extern crate env_logger;
 
 
+fn logging () {
+    trace!("TRACE");
+    debug!("DEBUG");
+    info!("INFO");
+    warn!("WARN");
+    error!("ERROR");
+}
+
 fn main () {
     env_logger::init();
     
@@ -47,15 +55,4 @@ fn main () {
 
     logging_levels(levels);
     logging_levels(logging);
-
-    
-
-}
-
-fn logging () {
-    trace!("TRACE");
-    debug!("DEBUG");
-    info!("INFO");
-    warn!("WARN");
-    error!("ERROR");
 }
