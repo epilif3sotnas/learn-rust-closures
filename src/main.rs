@@ -23,4 +23,10 @@ fn main () {
     info!("Sum result: {}", operation(2, 2, sub));
     info!("Sum result: {}", operation(2, 2, mult));
     info!("Sum result: {}", operation(2, 2, div));
+
+    let print_hello_world = || println!("Hello World!");
+    print_hello_world();
+
+    let print_log = || debug!("This is a log with level DEBUG");
+    print_log();
 }
