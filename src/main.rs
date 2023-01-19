@@ -9,25 +9,6 @@ extern crate log;
 extern crate env_logger;
 
 
-fn logging () {
-    trace!("TRACE");
-    debug!("DEBUG");
-    info!("INFO");
-    warn!("WARN");
-    error!("ERROR");
-}
-
-fn return_closure_logging () -> impl Fn() {
-    move || {
-        trace!("TRACE");
-        debug!("DEBUG");
-        info!("INFO");
-        warn!("WARN");
-        error!("ERROR");
-    }
-}
-
-
 fn main () {
     env_logger::init();
     
@@ -69,4 +50,22 @@ fn main () {
     
     let closure_logging = return_closure_logging();
     logging_levels(closure_logging);
+}
+
+fn logging () {
+    trace!("TRACE");
+    debug!("DEBUG");
+    info!("INFO");
+    warn!("WARN");
+    error!("ERROR");
+}
+
+fn return_closure_logging () -> impl Fn() {
+    move || {
+        trace!("TRACE");
+        debug!("DEBUG");
+        info!("INFO");
+        warn!("WARN");
+        error!("ERROR");
+    }
 }
