@@ -1,7 +1,7 @@
 // internal
 mod lambda;
 
-use lambda::lambda::{operation, something, logging_levels};
+use crate::lambda::lambda::{operation, something, logging_levels};
 
 // external
 #[macro_use]
