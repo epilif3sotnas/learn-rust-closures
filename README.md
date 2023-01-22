@@ -13,7 +13,7 @@ This repository was built with the goal to learn about closures in Rust programm
 Commands to run the project:
 
 ```
-cd {PATH_REPOSITORY}/server-rust;
+cd {PATH_REPOSITORY};
 cargo run;
 ```
 
