@@ -1,14 +1,14 @@
 [package]
-name = "learn-rust-lambda"
+name = "learn-rust-closures"
 version = "0.1.0"
 authors = ["epilif3sotnas"]
 edition = "2021"
-description = "Tic Tac Toe game in Rust language."
+description = "Learn Rust closures."
 readme = "README.md"
-repository = "https://github.com/epilif3sotnas/learn-rust-lambda"
+repository = "https://github.com/epilif3sotnas/learn-rust-closures"
 license = "MIT"
 license-file = "LICENSE"
-keywords = ["learning", "lambda"]
+keywords = ["learning", "closures"]
 publish = false
 
 [dependencies]
@@ -16,5 +16,5 @@ log = "~0"
 env_logger = "~0"
 
 [[bin]]
-name = "learn-rust-lambda"
+name = "learn-rust-closures"
 path = "src/main.rs"
