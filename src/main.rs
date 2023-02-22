@@ -1,23 +1,22 @@
 // internal
 mod lambda;
 
-use crate::lambda::functions::{operation, something, logging_levels};
+use crate::lambda::functions::{logging_levels, operation, something};
 
 // external
 #[macro_use]
 extern crate log;
 extern crate env_logger;
 
-
-fn main () {
+fn main() {
     env_logger::init();
-    
+
     info!("Starting learn lambda in Rustlang");
 
-    let sum = |a, b| {a + b};
-    let sub = |a, b| {a - b};
-    let mult = |a, b| {a * b};
-    let div = |a, b| {a / b};
+    let sum = |a, b| a + b;
+    let sub = |a, b| a - b;
+    let mult = |a, b| a * b;
+    let div = |a, b| a / b;
 
     info!("Sum result: {}", operation(2, 2, sum));
     info!("Sum result: {}", operation(2, 2, sub));
@@ -36,7 +35,6 @@ fn main () {
     };
     something(calling_no_params);
 
-   
     let levels = || {
         trace!("TRACE");
         debug!("DEBUG");
@@ -47,12 +45,12 @@ fn main () {
 
     logging_levels(levels);
     logging_levels(logging);
-    
+
     let closure_logging = return_closure_logging();
     logging_levels(closure_logging);
 }
 
-fn logging () {
+fn logging() {
     trace!("TRACE");
     debug!("DEBUG");
     info!("INFO");
@@ -60,7 +58,7 @@ fn logging () {
     error!("ERROR");
 }
 
-fn return_closure_logging () -> impl Fn() {
+fn return_closure_logging() -> impl Fn() {
     move || {
         trace!("TRACE");
         debug!("DEBUG");
